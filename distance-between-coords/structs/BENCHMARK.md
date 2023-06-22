@@ -1,12 +1,12 @@
 # Benchmarks
 
-_Implementation uses arrays to represent coordinates._
+_Implementation uses structs to represent coordinates._
 
 ## Tests
 
 ### calculateDistance
 
-_Calculate distance between two coordinates with arrays_
+_Calculate distance between two coordinates with structs_
 
 **Command**
 
@@ -19,9 +19,9 @@ go test -bench=. -benchmem
 ```
 goos: darwin
 goarch: arm64
-pkg: github.com/matthiasbruns/golang-experiments/distance-between-coords/arrays
+pkg: github.com/matthiasbruns/golang-experiments/distance-between-coords/structs
 Benchmark_calculateDistance
-Benchmark_calculateDistance-10    	1000000000	         0.3177 ns/op	       0 B/op	       0 allocs/op
+Benchmark_calculateDistance-10    	1000000000	         0.3157 ns/op	       0 B/op	       0 allocs/op
 PASS
 ```
 
@@ -32,7 +32,7 @@ PASS
 
 ### findClosestAndFarthestPoints
 
-_Find closest and farthest points with arrays_
+_Find closest and farthest points with structs_
 
 **Command**
 
@@ -45,9 +45,9 @@ go test -bench=. -benchmem
 ```
 goos: darwin
 goarch: arm64
-pkg: github.com/matthiasbruns/golang-experiments/distance-between-coords/arrays
+pkg: github.com/matthiasbruns/golang-experiments/distance-between-coords/structs
 Benchmark_findClosestAndFarthestPoints
-Benchmark_findClosestAndFarthestPoints-10    	68151807	        17.38 ns/op	       0 B/op	       0 allocs/op
+Benchmark_findClosestAndFarthestPoints-10    	67379137	        17.70 ns/op	       0 B/op	       0 allocs/op
 PASS
 ```
 
@@ -61,4 +61,4 @@ PASS
 
 The benchmarks show that the calculation of the distance between two coordinates and the calculation of the closest and
 farthest points is fast enough for a small number of points. The benchmarks also show that the memory allocation is
-zero when using arrays as coordinates.
+zero when using structs as coordinates.
